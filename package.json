@@ -1,0 +1,24 @@
+{
+  "name": "achart-net-activity",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hankai-mac/achart-net-activity.git"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "licenses": "MIT",
+  "spm": {
+    "main": "index.js",
+    "dependencies": {
+    },
+    "devDependencies": {
+      "expect.js": "0.3.1"
+    }
+  }
+}
