@@ -1,5 +1,5 @@
 {
-  "name": "achart-net-activity",
+  "name": "net-activity",
   "version": "0.0.0",
   "description": "",
   "keywords": [],
@@ -7,7 +7,7 @@
   "author": "",
   "repository": {
     "type": "git",
-    "url": "git://github.com/hankai-mac/achart-net-activity.git"
+    "url": "git@github.com:acharts/net-activity.git"
   },
   "bugs": {
     "url": ""
@@ -16,10 +16,10 @@
   "spm": {
     "main": "index.js",
     "dependencies": {
-      "achart-canvas": "1.0.0",
       "achart-util": "1.0.0"
     },
     "devDependencies": {
+      "achart-canvas": "1.0.0",
       "expect.js": "0.3.1"
     }
   }
