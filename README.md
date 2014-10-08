@@ -15,6 +15,6 @@ $ spm install net-activity --save
 ## Usage
 
 ```js
-var achartNetActivity = require('achart-net-activity');
+var Activity = require('net-activity');
 // use achartNetActivity
 ```
