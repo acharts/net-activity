@@ -5,7 +5,7 @@ function Activity(cfg) {
   this.events = {};
 }
 
-Activity.infix = '__->__';
+var infix = '__->__';
 
 Activity.ATTRS = {
   /**
@@ -50,7 +50,7 @@ Util.augment(Activity, {
 
     var edgeIdToEdge = {};
     Util.each(edges, function(edge) {
-      var id = edge.source + Activity.infix + edge.target;
+      var id = edge.source + infix + edge.target;
       edgeIdToEdge[id] = edge;
       edge.sourceNode = nodeIdToNode[edge.source];
       edge.targetNode = nodeIdToNode[edge.target];
@@ -84,6 +84,11 @@ Util.augment(Activity, {
   },
   drawEdge: function() {
     console.warn('请重载边画法 drawEdge')
+  },
+  findEdge: function(source, target) {
+    var _self = this;
+        edgeIdToEdge = _self.get('edgeIdToEdge');
+    return edgeIdToEdge[source + infix + target];
   }
 });
 
