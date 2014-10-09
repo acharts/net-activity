@@ -40,9 +40,11 @@ Util.augment(Activity, {
         edges = _self.get('edges');
     var nodeIdToNode = {};
     var adjoinTable = {};
+    var inverseAdjoinTable = {};
     Util.each(nodes, function(node) {
       nodeIdToNode[node.id] = node;
       adjoinTable[node.id] = {val: node.id, start: true};
+      inverseAdjoinTable[node.id] = {val: node.id};
     });
     _self.set('nodeIdToNode', nodeIdToNode);
 
@@ -55,9 +57,12 @@ Util.augment(Activity, {
       var node = getLast(adjoinTable[edge.source]);
       node.next = {val: edge.target, pre: edge.source};
       adjoinTable[edge.target].start = false;
+      node = getLast(inverseAdjoinTable[edge.target]);
+      node.next = {val: edge.source, suc: edge.target};
     });
     _self.set('edgeIdToEdge', edgeIdToEdge);
     _self.set('adjoinTable', adjoinTable);
+    _self.set('inverseAdjoinTable', inverseAdjoinTable);
   },
   _renderData: function() {
     var _self = this,
